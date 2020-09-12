@@ -16,6 +16,7 @@ fun main() {
 }
 
 infix fun <A> KleisliOptional<A>.compose(another: KleisliOptional<A>): KleisliOptional<A> {
+    // FIXME: composition of X and `null` shout be X
     return this.a.and(another.a) toT ("${this.b} and then ${another.b}")
 }
 
